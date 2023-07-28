@@ -151,15 +151,9 @@ form{
     justify-content: space-between;
     width:75%;
 }
-.filtre a{
-    text-decoration: none;
-    font-weight:bold;
-    color: black;
-}
 .bouton-filtre{
     padding:10px;
     margin:10px;
-
     border-radius: 20px 20px;
     border: 1px solid var(--filter-bg-color);
     align-content: center;
@@ -172,7 +166,42 @@ form{
 }
 .bouton-filtre i{
     color : var(--main-color);
+    padding-top:5%;
+    padding-bottom:5%;
 }
+/**** animation ******/
+.animation:hover{
+    animation: Zoom  1s linear 0s 1 normal forwards;
+}
+.animation:not(:hover){
+    animation: DeZoom 1s linear 0s 1 normal forwards;
+}
+@keyframes Zoom {
+    0% {
+        transform: scale(1);
+        background-color:white;
+    }
+    40% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.1);
+        background-color:var(--filter-bg-color);
+    }
+}
+@keyframes DeZoom {
+    0% {
+        transform: scale(1.1);
+        background-color:var(--filter-bg-color);
+    }
+    40% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        background-color:white;
+    }
+} 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
     display: flex;
@@ -315,48 +344,6 @@ footer{
     margin-bottom:5px;
 }
 
-/**** animation ******/
-.animation:hover{
-    animation: Zoom  1s linear 0s 1 normal forwards;
-}
-.animation:not(:hover){
-    animation: DeZoom 1s linear 0s 1 normal forwards;
-}
-
-@keyframes Zoom {
-0% {
-
-    transform: scale(1);
-    background-color:white;
-}
-40% {
-    transform: scale(1.2);
-}
-100% {
-    transform: scale(1.1);
-    background-color:var(--filter-bg-color);
-    
-   
-}
-
-}
-
-@keyframes DeZoom {
-    0% {
-        transform: scale(1.1);
-        background-color:var(--filter-bg-color);
-    }
-    40% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-        background-color:white;
-        animation-play-state: paused;
-    }
-} 
-
-
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
@@ -451,11 +438,8 @@ footer{
     /* ... */
 /*** header ***/
 *{
-    scrollbar-width: none;  /* Firefox */
+    scrollbar-width: none;  /* Firefox *//*Chrome*/
 }
--webkit-scrollbar {
-    scrollbar-width: none; /*Chrome*/
-} 
 .main-container {
     margin: 0px;
     padding: 0 0px;
@@ -516,13 +500,15 @@ footer{
     width:100%;
     margin-right:5%;
     margin-left:5%;
-    padding-bottom: 2px;;
-    text-align:left;
 }
 .bouton-filtre{
     width:35%;
     height:40px;
     text-align:center;
+}
+.bouton-filtre i{
+    padding-top:2%;
+    padding-bottom:2%;
 }
 /****** Hebergements And Populaires ***********/
 
