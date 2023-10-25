@@ -4,7 +4,7 @@
 
 ## Technologies used
 
-- HMTL
+- HTML
 - CSS
 
 ## Website link
